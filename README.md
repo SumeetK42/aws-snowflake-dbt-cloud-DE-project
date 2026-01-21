@@ -1,2 +1,7 @@
 # aws-snowflake-dbt-cloud-DE-project
-This Repo is the code base for end to end cloud data engineering project with AWS, Snowflake and DBT used as the Tech stack.
+
+📌 Overview
+
+This repository contains the codebase for an end-to-end Cloud Data Engineering project built using AWS, Snowflake, and dbt Cloud.
+
+The project demonstrates how raw data is ingested from AWS S3 into Snowflake and then transformed into analytics-ready tables using dbt Cloud, following modern data engineering best practices.
