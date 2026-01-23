@@ -37,9 +37,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   aws_snowflake_dbt_project:
-    # Applies to all files under models/example/
-    example:
+    # This is applicable for all model under staging folder 
+    raw:
+      +schema : RAW
+      +materialized: table 
+    enriched:
+      +schema : ENRICHED
       +materialized: table
-    # This is applicable for all model under staging folder  
-    staging:
-      +materialized: table
+    marts:
+      +schema: CURATED
+      +materialized: view  
