@@ -1,7 +1,14 @@
-select HOST_ID,
-HOST_NAME,
-HOST_SINCE,
-IS_SUPERHOST,
-RESPONSE_RATE
- from
-{{ ref('stg_hosts') }}
+
+select  
+LISTING_ID,
+HOST_ID,
+PROPERTY_TYPE,
+ROOM_TYPE,
+CITY,
+COUNTRY,
+ACCOMMODATES,
+BEDROOMS,
+BATHROOMS,
+PRICE_PER_NIGHT
+FROM
+{{ ref('stg_listings') }}

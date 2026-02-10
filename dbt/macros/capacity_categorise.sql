@@ -1,0 +1,9 @@
+{% macro capacity_categorise(P_ACCOMMODATES) %}
+
+CASE 
+  WHEN {{ P_ACCOMMODATES }} = 1 THEN 'SOLO'
+  WHEN {{ P_ACCOMMODATES }} = 2 THEN 'COUPLE'
+  WHEN {{ P_ACCOMMODATES }} BETWEEN 3 AND 7 THEN 'FRIENDS AND FAMILY'
+END
+
+{% endmacro %}
