@@ -1,11 +1,12 @@
 
-{% set incremental_flag = 1 %}
+{{ config(materialized='incremental') }}
+
 {% set incremental_col = 'CREATED_AT' %}
 
 select *
 from {{ source('RAW','BNB_BOOKINGS') }}
 
-{% if incremental_flag == 1 %}
+{% if is_incremental() %}
 where {{ incremental_col }} >
 (
     select coalesce(
