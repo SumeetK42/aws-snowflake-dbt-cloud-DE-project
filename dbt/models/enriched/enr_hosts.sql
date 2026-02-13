@@ -7,6 +7,8 @@ HOST_SINCE,
 {{ CALC_HOST_TENURE('HOST_SINCE') }} AS HOST_TENURE_MONTHS ,--datediff(year,HOST_SINCE,current_date())
 UPPER(IS_SUPERHOST) AS IS_SUPERHOST,
 RESPONSE_RATE,
-{{ response_rate_categorize('RESPONSE_RATE')  }} as RESPONSE_RATE_CATEGORY
+{{ response_rate_categorize('RESPONSE_RATE')  }} as RESPONSE_RATE_CATEGORY,
+Created_at,
+'DBT_USER' AS Created_by 
  from
 {{ ref('stg_hosts') }}

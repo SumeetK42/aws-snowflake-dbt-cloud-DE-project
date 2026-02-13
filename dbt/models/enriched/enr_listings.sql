@@ -14,6 +14,8 @@ BEDROOMS,
 BATHROOMS,
 {{ calc_space_score('ACCOMMODATES','BEDROOMS','BATHROOMS') }} as  SPACE_SCORE ,
 PRICE_PER_NIGHT,
-{{ price_cat('PRICE_PER_NIGHT') }} as PRICE_CATEGORY
+{{ price_cat('PRICE_PER_NIGHT') }} as PRICE_CATEGORY,
+Created_at,
+'DBT_USER' AS Created_by 
 FROM
 {{ ref('stg_listings') }}
