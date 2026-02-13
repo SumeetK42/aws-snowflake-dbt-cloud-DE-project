@@ -1,5 +1,5 @@
 
-{{ config(materialized='incremental',unique_key ='LISTING_ID') }} 
+{{ config(materialized='incremental',unique_key ='LISTING_ID',on_schema_change='sync_all_columns') }} 
 
 select  
 LISTING_ID,

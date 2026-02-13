@@ -1,4 +1,4 @@
-{{ config(materialized='incremental',unique_key='BOOKING_ID') }}
+{{ config(materialized='incremental',unique_key='BOOKING_ID',on_schema_change='sync_all_columns') }}
 {% set precision =  2 %}
 
 select 
