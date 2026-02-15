@@ -50,7 +50,7 @@
     }
     ,
     {
-        "columns" : "current_timestamp() as CREATE_DATE ,'DBT_USER' as CREATE_USER "
+        "columns" : "current_timestamp() as CREATED_AT ,'DBT_USER' as CREATE_USER "
     }
 ]
 %}

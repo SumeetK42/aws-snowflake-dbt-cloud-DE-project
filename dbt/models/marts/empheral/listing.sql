@@ -1,3 +1,7 @@
+
+{{ config(materialized='ephemeral') }}
+
+with listings as (
 select 
 LISTING_ID,
 PROPERTY_TYPE,
@@ -8,4 +12,5 @@ CAPACITY_CATEGORY,
 PRICE_CATEGORY,
 CREATED_AT
  from 
-{{ ref('enr_listings') }}
+{{ ref('OBT') }}
+) select * from listings 
