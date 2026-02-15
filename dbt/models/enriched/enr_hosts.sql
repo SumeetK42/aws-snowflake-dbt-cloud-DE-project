@@ -8,7 +8,7 @@ HOST_SINCE,
 UPPER(IS_SUPERHOST) AS IS_SUPERHOST,
 RESPONSE_RATE,
 {{ response_rate_categorize('RESPONSE_RATE')  }} as RESPONSE_RATE_CATEGORY,
-Created_at,
-'DBT_USER' AS Created_by 
+Created_at AS HOST_CREATED_AT,
+'DBT_USER' AS HOST_CREATED_BY
  from
 {{ ref('stg_hosts') }}

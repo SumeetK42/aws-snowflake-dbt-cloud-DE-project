@@ -1,11 +1,3 @@
 select 
-LISTING_ID,
-PROPERTY_TYPE,
-ROOM_TYPE,
-CITY,
-COUNTRY,
-CAPACITY_CATEGORY,
-PRICE_CATEGORY,
-CREATED_AT
- from 
-{{ ref('enr_listings') }}
+*
+{{ ref('enr_hosts') }}

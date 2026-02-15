@@ -10,7 +10,7 @@ CITY,
 COUNTRY,
 CAPACITY_CATEGORY,
 PRICE_CATEGORY,
-CREATED_AT
+LISTING_CREATED_AT
  from 
 {{ ref('OBT') }}
 ) select * from listings 

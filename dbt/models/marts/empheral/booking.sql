@@ -10,7 +10,7 @@ MONTH_BOOKED,
 QUARTER_BOOKED,
 NIGHTS_BOOKED,
 BOOKING_STATUS,
-CREATED_AT
+BOOKING_CREATED_AT
  from 
 {{ ref('OBT') }}
 ) select * from bookings

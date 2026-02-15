@@ -14,7 +14,11 @@
                     A_ENR_BOOKING.CLEANING_FEE,
                     A_ENR_BOOKING.SERVICE_FEE,
                     A_ENR_BOOKING.TOTAL_AMOUNT_IN_DOLLAR,
-                    A_ENR_BOOKING.BOOKING_STATUS"
+                    A_ENR_BOOKING.BOOKING_STATUS,
+                    A_ENR_BOOKING.BOOKING_CREATED_AT,
+                    A_ENR_BOOKING.BOOKING_CREATED_BY
+                    "
+                    
     },
     {
        "table": ref('enr_listings'),
@@ -31,7 +35,8 @@
                     A_ENR_LISTING.BATHROOMS,
                     A_ENR_LISTING.SPACE_SCORE,
                     A_ENR_LISTING.PRICE_PER_NIGHT,
-                    A_ENR_LISTING.PRICE_CATEGORY
+                    A_ENR_LISTING.PRICE_CATEGORY,
+                    A_ENR_LISTING.LISTING_CREATED_AT
                   ",
        "joining_condition" : "A_ENR_LISTING.LISTING_ID = A_ENR_BOOKING.LISTING_ID"
     },
@@ -44,14 +49,12 @@
                     A_ENR_HOSTS.HOST_TENURE_MONTHS,
                     A_ENR_HOSTS.IS_SUPERHOST,
                     A_ENR_HOSTS.RESPONSE_RATE,
-                    A_ENR_HOSTS.RESPONSE_RATE_CATEGORY
+                    A_ENR_HOSTS.RESPONSE_RATE_CATEGORY,
+                    A_ENR_HOSTS.HOST_CREATED_AT
                     ",
         "joining_condition" : "A_ENR_HOSTS.HOST_ID = A_ENR_LISTING.HOST_ID"
     }
     ,
-    {
-        "columns" : "current_timestamp() as CREATED_AT ,'DBT_USER' as CREATE_USER "
-    }
 ]
 %}
 
@@ -63,8 +66,6 @@ from
 {% for config in configs_data  %}
 {% if loop.first %}
 {{config.table}} as {{config.alias}}
-{% elif loop.last %}
-    
 {% else %}
 left join {{config.table}} as {{config.alias}} on {{ config.joining_condition }}
 {% endif %}

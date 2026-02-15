@@ -1,11 +1,11 @@
 {% snapshot dim_bookings %}
 
 {{ 
-    config(
+    config (
         target_schema = 'BNB_CURATED',
         strategy = 'timestamp',
         unique_key = 'BOOKING_ID',
-        updated_at = 'CREATED_AT'
+        updated_at = 'BOOKING_CREATED_AT'
     )
 }}
 

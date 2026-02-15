@@ -1,11 +1,11 @@
 {% snapshot dim_hosts %}
 
 {{
-    config(
+    config (
       target_schema='BNB_CURATED',
       unique_key='HOST_ID',
       strategy='timestamp',
-      updated_at='CREATED_AT',
+      updated_at='HOST_CREATED_AT'
     )
 }}
 
