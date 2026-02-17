@@ -1,0 +1,21 @@
+models:
+  - name: enr_booking
+    config:
+      materialized: table
+  - name: enr_hosts
+    config:
+      materialized: table    
+  - name: enr_listings
+    config:
+      materialized: table
+    ### applies for the specific model in the folder  
+  - name : dim_ hosts
+    config:
+      materialized: view
+  - name: dim_listings
+    config:
+      materialized: view 
+  - name : fact_booking
+    config:
+      materialized: view    
+    

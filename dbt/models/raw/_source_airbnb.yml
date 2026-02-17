@@ -1,0 +1,8 @@
+sources:
+  - name: RAW
+    database: AIRBNB_DB
+    schema: STAGING
+    tables:
+      - name: BNB_LISTINGS
+      - name : BNB_BOOKINGS
+      - name: BNB_HOSTS
