@@ -15,7 +15,6 @@
             obt.BATHROOMS,
             obt.SPACE_SCORE,
             obt.PRICE_PER_NIGHT,
-            obt.HOST_TENURE_MONTHS,
             obt.RESPONSE_RATE
             " ,
             "alias" : "obt" 
@@ -26,7 +25,7 @@
             "joining_cnd" : "host.HOST_ID = obt.host_id" 
         },
         {
-            "table" : "BNB_CURATED.DIM_LISTING",
+            "table" : "BNB_CURATED.DIM_LISTINGS",
             "alias" : "listing",
             "joining_cnd" : "listing.LISTING_ID = obt.LISTING_ID"
         }

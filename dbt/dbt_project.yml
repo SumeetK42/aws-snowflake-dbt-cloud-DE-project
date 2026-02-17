@@ -49,5 +49,5 @@ models:
       +materialized: table
     marts:
       +schema: CURATED
-      +materialized: view
+      +materialized: table
       +transient: false
