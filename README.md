@@ -55,6 +55,10 @@ The project covers the full data journey — from raw file ingestion through clo
 │                                      │     Connected to Snowflake   │   │
 │                                      └──────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────────────────┘
+
+
+![Architecture](arch.png)
+
 ```
 
 ---
@@ -97,6 +101,10 @@ aws-snowflake-dbt-cloud-DE-project/
 ├── .gitignore
 └── README.md
 ```
+
+## Table Details and Data Understanding
+
+![Table](table_details.png)
 
 ---
 
@@ -235,6 +243,10 @@ This ensures full historical lineage is preserved in the Mart layer for accurate
 - Snowflake connection configured in Looker using a dedicated service account
 - LookML defines dimensions, measures, and explores on top of the dbt Mart models
 - Dashboards built for business reporting on top of the fully transformed, governed data
+
+![LookerReport1](Looker_1.png)
+
+![LookerReport2](Looker_2.png)
 
 ---
 
