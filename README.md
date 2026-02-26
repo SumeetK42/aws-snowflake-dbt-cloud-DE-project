@@ -60,7 +60,7 @@ The project covers the full data journey — from raw file ingestion through clo
 
 
 ```
-![Architecture](arcg.png)
+![Architecture](arch.png)
 ---
 
 ## 🛠️ Tech Stack
